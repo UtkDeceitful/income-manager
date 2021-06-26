@@ -1,0 +1,25 @@
+.row {
+  @apply bg-gray-100 mx-auto;
+  width: 100%;
+  max-width: $grid-width;
+
+  &:not(:last-child) {
+    margin-bottom: $gap-y;
+  }
+
+  @include clearfix;
+  [class^="col-"] {
+    @apply bg-red-300 float-left;
+    &:not(:last-child) {
+      margin-right: $gap-x;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    @for $j from 1 through 12 {
+      .col-#{$j}-#{$i} {
+        width: calc(#{$j} * ((100% - (#{$i} - 1) * #{$gap-x}) / #{$i}) + (#{$j - 1} * #{$gap-x}));
+      }
+    }
+  }
+}
