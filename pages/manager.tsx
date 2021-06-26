@@ -4,25 +4,25 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 
 type Division = {
-  saving: number;
+  saving: number
   variables?: {
-    label: string;
-    value: string;
+    label: string
+    value: string
   }[];
 };
 
 interface IDivision {
-  engagement: Division;
-  investment: Division;
-  personal: Division;
+  engagement: Division
+  investment: Division
+  personal: Division
 }
 
 export const manager = (): JSX.Element => {
-  const [amount, setAmount] = useState<number>(0);
-  const [data, setData] = useState<IDivision>(null);
+  const [amount, setAmount] = useState<number>(0)
+  const [data, setData] = useState<IDivision>(null)
 
   const onButtonClicked = () => {
-    const dividedAmount = amount / 3;
+    const dividedAmount = amount / 3
     setData({
       engagement: {
         saving: dividedAmount,
@@ -33,7 +33,7 @@ export const manager = (): JSX.Element => {
       personal: {
         saving: dividedAmount,
       },
-    });
+    })
   };
 
   return (
@@ -101,7 +101,7 @@ const Container = styled.div`
   width: 650px;
   background: #fff;
   padding: 36px 36px;
-`;
+`
 
 const Title = styled.h1`
   font-style: normal;
@@ -110,27 +110,27 @@ const Title = styled.h1`
   line-height: 40px;
   color: #000000;
   text-align: center;
-`;
+`
 
 const Subtitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-`;
+`
 const Result = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 28px;
-`;
+`
 
 const Box = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 24px;
-`;
+`
 
 const BoxContainer = styled.div`
   display: flex;
@@ -147,7 +147,7 @@ const BoxContainer = styled.div`
   &:hover {
     background: #bbcaf3;
   }
-`;
+`
 const Label = styled.label`
   font-style: normal;
   font-weight: normal;
@@ -156,7 +156,7 @@ const Label = styled.label`
   /* Neutral / Gray 600 */
 
   color: #475569;
-`;
+`
 const Input = styled.input`
   width: 100%;
   padding: 12px 16px;
@@ -175,7 +175,7 @@ const Input = styled.input`
 
     color: #94a3b8;
   }
-`;
+`
 
 /* We can add the state prop */
 const mapStateToProps = () => ({});
