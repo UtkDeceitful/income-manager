@@ -1,7 +1,7 @@
-import { Button } from "@components/button";
-import React, { useState, ChangeEvent } from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import { Button } from "@components/button"
+import React, { useState, ChangeEvent } from "react"
+import styled from "styled-components"
+import { connect } from "react-redux"
 
 type Division = {
   saving: number;
