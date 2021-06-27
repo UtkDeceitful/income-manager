@@ -1,15 +1,15 @@
-import { Button } from "@components/button"
-import React, { useState, ChangeEvent } from "react"
-import styled from "styled-components"
-import { connect } from "react-redux"
+import { Button } from '@components/button'
+import React, { useState, ChangeEvent } from 'react'
+import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 type Division = {
   saving: number
   variables?: {
     label: string
     value: string
-  }[];
-};
+  }[]
+}
 
 interface IDivision {
   engagement: Division
@@ -34,12 +34,12 @@ export const manager = (): JSX.Element => {
         saving: dividedAmount,
       },
     })
-  };
+  }
 
   return (
     <div
       className="w-screen h-screen flex justify-center items-center"
-      style={{ background: "#E8EDFB" }}
+      style={{ background: '#E8EDFB' }}
     >
       <Container>
         <Title>
@@ -54,11 +54,11 @@ export const manager = (): JSX.Element => {
           name="income"
           value={amount}
           onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            const value = e.target.value;
-            if (value !== "") {
-              setAmount(Number.parseInt(e.target.value));
+            const value = e.target.value
+            if (value !== '') {
+              setAmount(Number.parseInt(e.target.value))
             } else {
-              setAmount(0);
+              setAmount(0)
             }
           }}
           placeholder="Input text here"
@@ -92,8 +92,8 @@ export const manager = (): JSX.Element => {
         </Box>
       </Container>
     </div>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.2);
@@ -178,8 +178,8 @@ const Input = styled.input`
 `
 
 /* We can add the state prop */
-const mapStateToProps = () => ({});
+const mapStateToProps = () => ({})
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(manager);
+export default connect(mapStateToProps, mapDispatchToProps)(manager)
